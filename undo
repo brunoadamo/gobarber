@@ -1,0 +1,8 @@
+yarn run v1.16.0
+$ C:\Users\bruno\Documents\coursers\rocketseat\bootcamp2019\modulo02\gobarber\node_modules\.bin\sequelize db:migrate
+
+[4mSequelize CLI [Node: 10.16.0, CLI: 5.5.0, ORM: 5.8.12][24m
+
+Loaded configuration file "src\config\database.js".
+No migrations were executed, database schema was already up to date.
+Done in 0.93s.
