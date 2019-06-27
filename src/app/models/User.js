@@ -1,6 +1,5 @@
 import { Model, Sequelize } from 'sequelize';
 import bcrypt from 'bcryptjs';
-import { threadId } from 'worker_threads';
 
 class User extends Model {
   static init(sequelize) {
@@ -16,7 +15,13 @@ class User extends Model {
         sequelize,
       }
     );
-    this.addHook('beforeSave');
+    this.addHook('beforeSave', async user => {
+      if (user.password) {
+        user.password_hash = await bcrypt.hash(user.password, 8);
+      }
+    });
+
+    return this;
   }
 }
 
