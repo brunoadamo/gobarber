@@ -58,7 +58,9 @@ class AppointmentController {
     }
 
     if (provider_id === req.userId) {
-      return res.status(401).json({ error: 'You can create a appointment' });
+      return res
+        .status(401)
+        .json({ error: 'You cant create an appointment for yourself' });
     }
 
     /**
